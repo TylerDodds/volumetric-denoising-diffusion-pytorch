@@ -14,7 +14,8 @@ An example approach to performing training for a volumetric data source can be f
 
 * Volumetric data loading and saving is currently only supported for [NII](https://en.wikipedia.org/wiki/Neuroimaging_Informatics_Technology_Initiative) images. 
   * Other formats such as DICOM could be handled, for example, using [Pydicom](https://pydicom.github.io/).
-* Training could only be tested using a very small dataset (12 samples) resized to a small volume (32<sup>3</sup>).
+* Training could only be tested using a very small dataset (12 samples of brain MRI data) resized to a small volume (32<sup>3</sup>).
+  * With such a limited data set, sampled results can end up looking somewhat similar: <img src="./images/volume_sample_0.gif"></img> <img src="./images/volume_sample_1.gif"></img> <img src="./images/volume_sample_2.gif"></img>
 * The UNet implementation was naively generalized from 2D to 3D and could use additional work, particularly to limit memory usage when handling larger input volume sizes.
 
 ## Denoising Diffusion Probabilistic Model, in Pytorch
