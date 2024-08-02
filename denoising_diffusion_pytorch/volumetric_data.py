@@ -53,10 +53,12 @@ class NiiDataset(Dataset):
             self.normalize_type = 0
         self.resize_to = resize_to
         self.transform = transform
-        self.nii_paths = NiiDataset.get_nii_image_paths(self.nii_dir, ["nii", "nii.gz"])
-        self.min_shape = None
-        self.nii_shapes = [nibabel.load(path).shape for path in self.nii_paths]
-        self.min_shape = np.array(self.nii_shapes).min(axis = 0)
+        if os.path.exists(self.nii_dir):
+            self.nii_paths = NiiDataset.get_nii_image_paths(self.nii_dir, ["nii", "nii.gz"])
+            self.nii_shapes = [nibabel.load(path).shape for path in self.nii_paths]
+            self.min_shape = np.array(self.nii_shapes).min(axis = 0) if len(self.nii_shapes) > 0 else np.zeros(3, dtype = int)
+        else:
+            print(f"Folder does not exist: {self.nii_dir}")
     
     def _get_min_shape(self) -> np.ndarray:
         if self.min_shape is None:
