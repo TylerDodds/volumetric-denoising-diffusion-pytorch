@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2020 Phil Wang
+
 from functools import wraps
 from packaging import version
 from collections import namedtuple

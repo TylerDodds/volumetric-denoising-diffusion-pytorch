@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2020 Phil Wang
+
 import math
 import copy
 from pathlib import Path

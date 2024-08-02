@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2020 Phil Wang
+
 """
 the magnitude-preserving unet proposed in https://arxiv.org/abs/2312.02696 by Karras et al.
 """

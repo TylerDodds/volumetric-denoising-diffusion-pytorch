@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: MIT
 # SPDX-FileCopyrightText: © 2024 Tyler Dodds
+# SPDX-FileCopyrightText: © 2020 Phil Wang
 
 from denoising_diffusion_pytorch.volumetric_data import VolumetricSaver
 

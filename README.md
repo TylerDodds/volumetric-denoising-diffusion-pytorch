@@ -1,5 +1,22 @@
 <img src="./images/denoising-diffusion.png" width="500px"></img>
 
+## Volumetric Denoising Diffusion Probabilistic Model, in Pytorch
+
+This fork of the [denoising-diffusion-pytorch](https://github.com/lucidrains/denoising-diffusion-pytorch) repository
+adds a naive generalization of the default UNet to handle 3D volumetric data.
+The original README information can be found [below](#denoising-diffusion-probabilistic-model-in-pytorch).
+
+To install, you can clone this repository locally and use `pip install -e`.
+
+An example approach to performing training for a volumetric data source can be found in [volumetric_training_example.py](volumetric_training_example.py)
+
+### Limitations
+
+* Volumetric data loading and saving is currently only supported for [NII](https://en.wikipedia.org/wiki/Neuroimaging_Informatics_Technology_Initiative) images. 
+  * Other formats such as DICOM could be handled, for example, using [Pydicom](https://pydicom.github.io/).
+* Training could only be tested using a very small dataset (12 samples) resized to a small volume (32<sup>3</sup>).
+* The UNet implementation was naively generalized from 2D to 3D and could use additional work, particularly to limit memory usage when handling larger input volume sizes.
+
 ## Denoising Diffusion Probabilistic Model, in Pytorch
 
 Implementation of <a href="https://arxiv.org/abs/2006.11239">Denoising Diffusion Probabilistic Model</a> in Pytorch. It is a new approach to generative modeling that may <a href="https://ajolicoeur.wordpress.com/the-new-contender-to-gans-score-matching-with-langevin-sampling/">have the potential</a> to rival GANs. It uses denoising score matching to estimate the gradient of the data distribution, followed by Langevin sampling to sample from the true distribution.

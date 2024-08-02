@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2020 Phil Wang
+
 import torch
 from inspect import isfunction
 from torch import nn, einsum

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2020 Phil Wang
+
 import torch
 from collections import namedtuple
 from math import pi, sqrt, log as ln
